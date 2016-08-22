@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Open food facts - Ionic 2</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding class="home">
+    <h2>Welcome!</h2>
+    <p>
+        This project is just an example on how you can use the http://openfoodfacts.org/ API to search food product data
+    </p>
+    <button primary block (click)="scanBarcode($event)">Scan barcode</button>
+    <ion-card>
+        <ion-card-header>Barcode</ion-card-header>
+        <ion-card-content *ngIf="barcodeData">
+            <p>Barcode: {{barcodeData.text}}</p>
+            <p>Format: {{barcodeData.format}}</p>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-header>
+            Product data
+        </ion-card-header>
+        <ion-card-content *ngIf="productData">
+            Name: {{productData.product_name}}
+            <br>
+            Brands: {{productData.brands}}
+            <br>
+            Ingredients: {{productData.ingredients_text}}
+            <br>
+            <img [src]="productData.image_small_url">
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>
