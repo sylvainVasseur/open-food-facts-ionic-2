@@ -31,6 +31,9 @@
             <br>
             <img [src]="productData.image_small_url">
         </ion-card-content>
+        <ion-card-content *ngIf="!productFound">
+            Product not found
+        </ion-card-content>
     </ion-card>
 
 </ion-content>
